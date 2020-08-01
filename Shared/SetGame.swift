@@ -40,7 +40,6 @@ struct SetGame<CardContent> {
     
     mutating func choose(card: Card) {
         print("card \(card) chosen")
-        print("selected cards count: \(selectedCards.count)")
         if selectedCards.count == 3 {
             cards.indices
                 .filter { cards[$0].isSelected }
@@ -52,18 +51,16 @@ struct SetGame<CardContent> {
                         cards[cardIndex].setState = .incomplete
                     }
                 }
-            print("a: openCards.count: \(openCards.count)")
             while openCards.count < 12 {
                 showTopDeckCard()
             }
-            print("b: openCards.count: \(openCards.count)")
         }
         if card.setState == .incomplete && card.position == .onTable {
             if let cardIndex = cards.firstIndex(where: { $0.id == card.id}) {
                 cards[cardIndex].isSelected.toggle()
             }
         }
-        let setState = calculateSetState(possibleSet: selectedCards)
+        let setState = calculateSetState(for: selectedCards)
         if setState != .incomplete {
             cards.indices
                 .filter { cards[$0].isSelected }
@@ -73,11 +70,16 @@ struct SetGame<CardContent> {
         }
     }
 
-    func calculateSetState(possibleSet: [Card]) -> SetState {
+    func calculateSetState(for possibleSet: [Card]) -> SetState {
         if possibleSet.count != 3 {
             return .incomplete
         } else {
-            return .matching
+            return (
+                Set(possibleSet.map { $0.symbolCount }).count != 2 &&
+                    Set(possibleSet.map { $0.symbolColorIndex }).count != 2 &&
+                    Set(possibleSet.map { $0.symbolShapeIndex }).count != 2 &&
+                    Set(possibleSet.map { $0.symbolShadingIndex }).count != 2
+            ) ? .matching : .nonMatching
         }
     }
     
