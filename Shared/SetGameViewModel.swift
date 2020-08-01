@@ -17,24 +17,27 @@ class SetGameViewModel : ObservableObject {
     @Published private(set) var playerCount: Int = 1
     @Published private var game: Game
 
+    class func createGame(for theme: Theme) -> Game {
+        SetGame<CardContentView>(
+            countRange: theme.counts,
+            colorIndices: theme.colors.indices,
+            shapeIndices: theme.shapes.indices,
+            shadingIndices: theme.shadings.indices,
+            contentFactory: { count, colorIndex, shapeIndex, shadingIndex in
+                CardContentView(
+                    count: count,
+                    color: theme.colors[colorIndex],
+                    shape: theme.shapes[shapeIndex],
+                    shading: theme.shadings[shadingIndex]
+                )
+            }
+        )
+    }
+    
     init() {
         let theme = themes.first!
         self.theme = theme
-        self.game =
-            SetGame<CardContentView>(
-                countRange: theme.counts,
-                colorIndices: theme.colors.indices,
-                shapeIndices: theme.shapes.indices,
-                shadingIndices: theme.shadings.indices,
-                contentFactory: { count, colorIndex, shapeIndex, shadingIndex in
-                    CardContentView(
-                        count: count,
-                        color: theme.colors[colorIndex],
-                        shape: theme.shapes[shapeIndex],
-                        shading: theme.shadings[shadingIndex]
-                    )
-                }
-            )
+        self.game = Self.createGame(for: theme)
         
     }
 
@@ -43,19 +46,26 @@ class SetGameViewModel : ObservableObject {
     }
     
     var openCards: [Card] {
-        cards.filter { card in card.position == .onTable}
-    }
-    
-    func openTopDeckCard() {
-        if let topDeckCardIndex = game.cards.firstIndex(where: { $0.position == .inDeck}) {
-            game.cards[topDeckCardIndex].position = .onTable
-        }
+        game.openCards
     }
     
     func choose(card: Card) {
-        print("card \(card) chosen")
-        if let cardIndex = game.cards.firstIndex(where: { $0.id == card.id}) {
-            game.cards[cardIndex].position = .inDeck
-        }
+        game.choose(card: card)
+    }
+    
+    func shuffle() {
+        game.shuffle()
+    }
+    
+    func deal() {
+        game.deal()
+    }
+
+    func showMore() {
+        game.showMore()
+    }
+    
+    func newGame() {
+        self.game = Self.createGame(for: theme)
     }
 }

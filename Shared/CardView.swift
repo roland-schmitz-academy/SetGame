@@ -22,6 +22,9 @@ struct CardView : View {
             card.content.padding(cardPadding(for: size))
         }
         .aspectRatio(cardAspectRatio, contentMode: .fit)
+        .rotationEffect(.degrees(card.isSelected ? 10 : 0))
+        .scaleEffect(card.isSelected ? 0.9 : 1)
+//        .animation(card.isSelected ? Animation.easeInOut.repeatForever(autoreverses: true) : .default)
     }
 
     func cardPadding(for size: CGSize) -> CGFloat {

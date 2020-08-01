@@ -22,52 +22,54 @@ struct SetGameView: View {
             Grid(game.openCards) { card in
                 CardView(card: card)
                     .padding(5)
-                    //.aspectRatio(2 / 3, contentMode: .fit)
+                    .transition(AnyTransition.move(edge: Edge.allCases.randomElement()!))
                     .onTapGesture {
-                        withAnimation(Animation.easeInOut(duration: 0.5)) {
+                        withAnimation(Animation.easeInOut) {
                             game.choose(card: card)
                         }
                     }
-                    .transition(AnyTransition.move(edge: Edge.allCases.randomElement()!))
+            }.onAppear {
+                withAnimation(Animation.easeInOut(duration: 1.0)) {
+                    game.deal()
+                }
             }
+
             Divider()
             HStack {
+
                 Button {
-                    withAnimation(Animation.easeInOut) {
-                        game.openTopDeckCard()
+                    withAnimation(Animation.easeInOut(duration: 1)) {
+                        game.newGame()
+                        game.deal()
                     }
                 } label: {
-                    Text("+1").blueButton()
+                    Text("New Game").blueButton()
                 }
 
                 Button {
-                    withAnimation(Animation.easeInOut) {
-                        3.times { game.openTopDeckCard() }
+                    withAnimation(Animation.easeInOut(duration: 1)) {
+                        game.deal()
                     }
                 } label: {
-                    Text("+3").blueButton()
+                    Text("Deal").blueButton()
                 }
 
                 Button {
-                    withAnimation(Animation.easeInOut) {
-                        12.times { game.openTopDeckCard() }
+                    withAnimation(Animation.easeInOut(duration: 1)) {
+                        game.shuffle()
                     }
                 } label: {
-                    Text("+12").blueButton()
+                    Text("Shuffle").blueButton()
                 }
 
-
+                Button {
+                    withAnimation(Animation.easeInOut(duration: 1)) {
+                        game.showMore()
+                    }
+                } label: {
+                    Text("Show More").blueButton()
+                }
             }.padding(5)
-            
-            
-            
-//            Button {
-//                withAnimation(Animation.easeInOut) {
-//                    game.openTopDeckCard()
-//                }
-//            }, ) {
-//                Text("New Card").padding(.vertical, 5).padding(.horizontal,20).background(Color(.systemBlue)).foregroundColor(Color(.systemBackground)).cornerRadius(10)
-//            }.padding(5)
         }
     }
 }
