@@ -3,27 +3,57 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F388B56924CA41CD0055865D /* SetGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388B56824CA41CD0055865D /* SetGameView.swift */; };
+		F388B56A24CA41CD0055865D /* SetGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388B56824CA41CD0055865D /* SetGameView.swift */; };
+		F388B56C24CA52000055865D /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388B56B24CA52000055865D /* Themes.swift */; };
+		F388B56D24CA52000055865D /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388B56B24CA52000055865D /* Themes.swift */; };
+		F388B56F24CA542B0055865D /* Diamond.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388B56E24CA542B0055865D /* Diamond.swift */; };
+		F388B57024CA542B0055865D /* Diamond.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388B56E24CA542B0055865D /* Diamond.swift */; };
+		F388B57224CB38740055865D /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388B57124CB38740055865D /* Grid.swift */; };
+		F388B57324CB38740055865D /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388B57124CB38740055865D /* Grid.swift */; };
+		F388B57524CB3A330055865D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388B57424CB3A320055865D /* CardView.swift */; };
+		F388B57624CB3A330055865D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388B57424CB3A320055865D /* CardView.swift */; };
+		F388B59F24CE15110055865D /* BlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388B59E24CE15110055865D /* BlueButton.swift */; };
+		F388B5A024CE15110055865D /* BlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388B59E24CE15110055865D /* BlueButton.swift */; };
+		F388B5A224CE1A870055865D /* Int+times.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388B5A124CE1A870055865D /* Int+times.swift */; };
+		F388B5A324CE1A870055865D /* Int+times.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388B5A124CE1A870055865D /* Int+times.swift */; };
 		F3F238B124C79E0400EACFA2 /* SetGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F2389E24C79E0300EACFA2 /* SetGameApp.swift */; };
 		F3F238B224C79E0400EACFA2 /* SetGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F2389E24C79E0300EACFA2 /* SetGameApp.swift */; };
-		F3F238B324C79E0400EACFA2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F2389F24C79E0300EACFA2 /* ContentView.swift */; };
-		F3F238B424C79E0400EACFA2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F2389F24C79E0300EACFA2 /* ContentView.swift */; };
 		F3F238B524C79E0400EACFA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3F238A024C79E0400EACFA2 /* Assets.xcassets */; };
 		F3F238B624C79E0400EACFA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3F238A024C79E0400EACFA2 /* Assets.xcassets */; };
+		F3F238C024C994CE00EACFA2 /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F238BF24C994CE00EACFA2 /* SetGame.swift */; };
+		F3F238C124C994CE00EACFA2 /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F238BF24C994CE00EACFA2 /* SetGame.swift */; };
+		F3F238C324C9C0E500EACFA2 /* SetGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F238C224C9C0E500EACFA2 /* SetGameViewModel.swift */; };
+		F3F238C424C9C0E500EACFA2 /* SetGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F238C224C9C0E500EACFA2 /* SetGameViewModel.swift */; };
+		F3F238C624CA185B00EACFA2 /* CardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F238C524CA185B00EACFA2 /* CardContentView.swift */; };
+		F3F238C724CA185B00EACFA2 /* CardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F238C524CA185B00EACFA2 /* CardContentView.swift */; };
+		F3F238C924CA2B6D00EACFA2 /* AnyShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F238C824CA2B6D00EACFA2 /* AnyShape.swift */; };
+		F3F238CA24CA2B6D00EACFA2 /* AnyShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F238C824CA2B6D00EACFA2 /* AnyShape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F388B56824CA41CD0055865D /* SetGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameView.swift; sourceTree = "<group>"; };
+		F388B56B24CA52000055865D /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
+		F388B56E24CA542B0055865D /* Diamond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diamond.swift; sourceTree = "<group>"; };
+		F388B57124CB38740055865D /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		F388B57424CB3A320055865D /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		F388B59E24CE15110055865D /* BlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueButton.swift; sourceTree = "<group>"; };
+		F388B5A124CE1A870055865D /* Int+times.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+times.swift"; sourceTree = "<group>"; };
 		F3F2389E24C79E0300EACFA2 /* SetGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameApp.swift; sourceTree = "<group>"; };
-		F3F2389F24C79E0300EACFA2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F3F238A024C79E0400EACFA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3F238A524C79E0400EACFA2 /* SetGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SetGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F238A824C79E0400EACFA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3F238AD24C79E0400EACFA2 /* SetGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SetGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F238AF24C79E0400EACFA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3F238B024C79E0400EACFA2 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		F3F238BF24C994CE00EACFA2 /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
+		F3F238C224C9C0E500EACFA2 /* SetGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameViewModel.swift; sourceTree = "<group>"; };
+		F3F238C524CA185B00EACFA2 /* CardContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContentView.swift; sourceTree = "<group>"; };
+		F3F238C824CA2B6D00EACFA2 /* AnyShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyShape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +88,18 @@
 			isa = PBXGroup;
 			children = (
 				F3F2389E24C79E0300EACFA2 /* SetGameApp.swift */,
-				F3F2389F24C79E0300EACFA2 /* ContentView.swift */,
 				F3F238A024C79E0400EACFA2 /* Assets.xcassets */,
+				F3F238BF24C994CE00EACFA2 /* SetGame.swift */,
+				F3F238C224C9C0E500EACFA2 /* SetGameViewModel.swift */,
+				F3F238C524CA185B00EACFA2 /* CardContentView.swift */,
+				F3F238C824CA2B6D00EACFA2 /* AnyShape.swift */,
+				F388B56824CA41CD0055865D /* SetGameView.swift */,
+				F388B56B24CA52000055865D /* Themes.swift */,
+				F388B56E24CA542B0055865D /* Diamond.swift */,
+				F388B57124CB38740055865D /* Grid.swift */,
+				F388B57424CB3A320055865D /* CardView.swift */,
+				F388B59E24CE15110055865D /* BlueButton.swift */,
+				F388B5A124CE1A870055865D /* Int+times.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -145,7 +185,7 @@
 				};
 			};
 			buildConfigurationList = F3F2389C24C79E0300EACFA2 /* Build configuration list for PBXProject "SetGame" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -187,8 +227,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3F238B324C79E0400EACFA2 /* ContentView.swift in Sources */,
+				F388B56C24CA52000055865D /* Themes.swift in Sources */,
+				F3F238C024C994CE00EACFA2 /* SetGame.swift in Sources */,
+				F388B56924CA41CD0055865D /* SetGameView.swift in Sources */,
+				F3F238C624CA185B00EACFA2 /* CardContentView.swift in Sources */,
+				F388B57524CB3A330055865D /* CardView.swift in Sources */,
+				F388B56F24CA542B0055865D /* Diamond.swift in Sources */,
 				F3F238B124C79E0400EACFA2 /* SetGameApp.swift in Sources */,
+				F3F238C924CA2B6D00EACFA2 /* AnyShape.swift in Sources */,
+				F388B59F24CE15110055865D /* BlueButton.swift in Sources */,
+				F3F238C324C9C0E500EACFA2 /* SetGameViewModel.swift in Sources */,
+				F388B5A224CE1A870055865D /* Int+times.swift in Sources */,
+				F388B57224CB38740055865D /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,8 +246,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3F238B424C79E0400EACFA2 /* ContentView.swift in Sources */,
+				F388B56D24CA52000055865D /* Themes.swift in Sources */,
+				F3F238C124C994CE00EACFA2 /* SetGame.swift in Sources */,
+				F388B56A24CA41CD0055865D /* SetGameView.swift in Sources */,
+				F3F238C724CA185B00EACFA2 /* CardContentView.swift in Sources */,
+				F388B57624CB3A330055865D /* CardView.swift in Sources */,
+				F388B57024CA542B0055865D /* Diamond.swift in Sources */,
 				F3F238B224C79E0400EACFA2 /* SetGameApp.swift in Sources */,
+				F3F238CA24CA2B6D00EACFA2 /* AnyShape.swift in Sources */,
+				F388B5A024CE15110055865D /* BlueButton.swift in Sources */,
+				F3F238C424C9C0E500EACFA2 /* SetGameViewModel.swift in Sources */,
+				F388B5A324CE1A870055865D /* Int+times.swift in Sources */,
+				F388B57324CB38740055865D /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +380,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EE29XD2KE9;
 				ENABLE_PREVIEWS = YES;
@@ -331,6 +392,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.2rs.SetGame;
 				PRODUCT_NAME = SetGame;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -342,6 +404,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EE29XD2KE9;
 				ENABLE_PREVIEWS = YES;
@@ -353,6 +416,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.2rs.SetGame;
 				PRODUCT_NAME = SetGame;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -376,7 +440,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = de.2rs.SetGame;
 				PRODUCT_NAME = SetGame;
 				SDKROOT = macosx;
@@ -400,7 +464,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = de.2rs.SetGame;
 				PRODUCT_NAME = SetGame;
 				SDKROOT = macosx;
