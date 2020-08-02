@@ -54,11 +54,11 @@ struct SetGame<CardContent> {
                 showTopDeckCard()
             }
         }
-        if card.setState == .incomplete && card.position == .onTable {
-            if let cardIndex = cards.firstIndex(where: { $0.id == card.id}) {
-                cards[cardIndex].isSelected.toggle()
-            }
+        if let cardIndex = cards.firstIndex(where: { $0.id == card.id}),
+           cards[cardIndex].position == .onTable {
+            cards[cardIndex].isSelected.toggle()
         }
+        
         let setState = calculateSetState(for: selectedCards)
         if setState != .incomplete {
             cards.indices

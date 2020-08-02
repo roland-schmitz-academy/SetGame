@@ -28,7 +28,8 @@ struct CardView : View {
         .aspectRatio(cardAspectRatio, contentMode: .fit)
         .rotationEffect(.degrees(card.isSelected ? 10 : 0))
         .scaleEffect(card.isSelected ? 0.9 : 1)
-//        .animation(card.isSelected ? Animation.easeInOut.repeatForever(autoreverses: true) : .default)
+        //todo: Why is this repeatForever animation behaving bad, when you turn your device while animation is active
+        //.animation(card.isSelected ? Animation.easeInOut.repeatForever(autoreverses: true) : .default)
     }
 
     @ViewBuilder
