@@ -20,6 +20,10 @@ struct CardView : View {
         ZStack(alignment: .center) {
             RoundedRectangle(cornerRadius: cardPadding(for: size)).fill(Color(.secondarySystemFill))
             card.content.padding(cardPadding(for: size))
+            thumbsImage(for: card)
+                .opacity(0.8)
+                .font(.system(size: thumbsFontSize(for: size)))
+
         }
         .aspectRatio(cardAspectRatio, contentMode: .fit)
         .rotationEffect(.degrees(card.isSelected ? 10 : 0))
@@ -27,8 +31,25 @@ struct CardView : View {
 //        .animation(card.isSelected ? Animation.easeInOut.repeatForever(autoreverses: true) : .default)
     }
 
+    @ViewBuilder
+    func thumbsImage(for card: SetGameViewModel.Card) -> some View {
+        if card.setState != .incomplete {
+            Image(systemName: card.setState == .matching ? "hand.thumbsup.fill" : "hand.thumbsdown.fill")
+                .transition(.scale)
+
+        }
+    }
+    
+    func minimumCardEdgeSize(for size: CGSize) -> CGFloat {
+        min(size.width, size.height * cardAspectRatio )
+    }
+    
+    func thumbsFontSize(for size: CGSize) -> CGFloat {
+        minimumCardEdgeSize(for: size) / 2
+    }
+    
     func cardPadding(for size: CGSize) -> CGFloat {
-        min(size.width / 10, size.height * cardAspectRatio / 10 )
+        minimumCardEdgeSize(for: size) / 10
     }
     
     let cardAspectRatio: CGFloat = 2/3

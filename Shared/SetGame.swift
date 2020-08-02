@@ -39,7 +39,6 @@ struct SetGame<CardContent> {
     }
     
     mutating func choose(card: Card) {
-        print("card \(card) chosen")
         if selectedCards.count == 3 {
             cards.indices
                 .filter { cards[$0].isSelected }
