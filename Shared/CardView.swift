@@ -20,10 +20,15 @@ struct CardView : View {
         ZStack(alignment: .center) {
             RoundedRectangle(cornerRadius: cardPadding(for: size)).fill(Color(.secondarySystemFill))
             card.content.padding(cardPadding(for: size))
-            thumbsImage(for: card)
+            thumbsImage(for: card.setState)
                 .opacity(0.8)
                 .font(.system(size: thumbsFontSize(for: size)))
 
+            VStack {
+                thumbsImage(for: card.hint)
+                    .opacity(0.4)
+                    .font(.system(size: thumbsFontSize(for: size) * 1.5 ))
+            }
         }
         .aspectRatio(cardAspectRatio, contentMode: .fit)
         .rotationEffect(.degrees(card.isSelected ? 10 : 0))
@@ -33,9 +38,9 @@ struct CardView : View {
     }
 
     @ViewBuilder
-    func thumbsImage(for card: SetGameViewModel.Card) -> some View {
-        if card.setState != .incomplete {
-            Image(systemName: card.setState == .matching ? "hand.thumbsup.fill" : "hand.thumbsdown.fill")
+    func thumbsImage(for setState: SetGameViewModel.SetState) -> some View {
+        if setState != .incomplete {
+            Image(systemName: setState == .matching ? "hand.thumbsup.fill" : "hand.thumbsdown.fill")
                 .transition(.scale)
 
         }

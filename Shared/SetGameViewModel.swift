@@ -12,6 +12,7 @@ import SwiftUI
 class SetGameViewModel : ObservableObject {
     typealias Game = SetGame<CardContentView>
     typealias Card = Game.Card
+    typealias SetState = Game.SetState
 
     @Published private(set) var theme: Theme
     @Published private(set) var playerCount: Int = 1
@@ -49,6 +50,14 @@ class SetGameViewModel : ObservableObject {
         game.openCards
     }
     
+    var topDeckCard: Card? {
+        game.cards.first { $0.position == .inDeck }
+    }
+    
+    var hasDeckCards: Bool {
+        topDeckCard != nil
+    }
+    
     func choose(card: Card) {
         game.choose(card: card)
     }
@@ -63,6 +72,14 @@ class SetGameViewModel : ObservableObject {
 
     func showMore() {
         game.showMore()
+    }
+    
+    func showHint() {
+        game.showHint()
+    }
+    
+    func hideHint() {
+        game.hideHint()
     }
     
     func newGame() {

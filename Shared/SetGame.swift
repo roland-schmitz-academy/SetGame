@@ -32,31 +32,46 @@ struct SetGame<CardContent> {
         cards.filter { card in card.isSelected }
     }
     
+    var topDeckCardIndex: Int? {
+        cards.firstIndex { $0.position == .inDeck }
+    }
+    
     mutating func showTopDeckCard() {
-        if let topDeckCardIndex = cards.firstIndex(where: { $0.position == .inDeck}) {
+        if let topDeckCardIndex = topDeckCardIndex {
             cards[topDeckCardIndex].position = .onTable
         }
     }
     
-    mutating func choose(card: Card) {
-        if selectedCards.count == 3 {
-            cards.indices
-                .filter { cards[$0].isSelected }
-                .forEach { cardIndex in
-                    cards[cardIndex].isSelected = false
-                    if cards[cardIndex].setState == .matching {
-                        cards[cardIndex].position = .removed
-                    } else {
-                        cards[cardIndex].setState = .incomplete
-                    }
+    mutating func replaceSelectedMatchingCards(force: Bool = false) {
+        cards
+            .indices
+            .filter { cards[$0].isSelected && cards[$0].setState == .matching }
+            .forEach { matchedIndex in
+                cards[matchedIndex].isSelected = false
+                cards[matchedIndex].position = .removed
+                if let topDeckCardIndex = topDeckCardIndex, openCards.count < 12 || force {
+                    cards[topDeckCardIndex].position = .onTable
+                    cards.swapAt(matchedIndex, topDeckCardIndex)
                 }
-            while openCards.count < 12 {
-                showTopDeckCard()
             }
-        }
-        if let cardIndex = cards.firstIndex(where: { $0.id == card.id}),
-           cards[cardIndex].position == .onTable {
-            cards[cardIndex].isSelected.toggle()
+    }
+    
+    mutating func unselectNonMatchingCards() {
+        cards
+            .indices
+            .filter { cards[$0].isSelected && cards[$0].setState == .nonMatching }
+            .forEach { nonMatchedIndex in
+                cards[nonMatchedIndex].isSelected = false
+                cards[nonMatchedIndex].setState = .incomplete
+            }
+    }
+    
+    mutating func choose(card: Card) {
+        replaceSelectedMatchingCards()
+        unselectNonMatchingCards()
+        if let chosenIndex = cards.firstIndex(where: { $0.id == card.id}),
+           cards[chosenIndex].position == .onTable {
+            cards[chosenIndex].isSelected.toggle()
         }
         
         let setState = calculateSetState(for: selectedCards)
@@ -99,9 +114,23 @@ struct SetGame<CardContent> {
     }
     
     mutating func showMore() {
-        3.times { showTopDeckCard() }
+        if selectedCards.filter({ $0.setState == .matching }).count > 0 {
+            replaceSelectedMatchingCards(force: true)
+        } else {
+            3.times { showTopDeckCard() }
+        }
+    }
+
+    mutating func showHint() {
+        // todo find hint cards matching current selection or hint a non matchable card in selection
+        cards[0].hint = .matching
+        cards[1].hint = .nonMatching
     }
     
+    mutating func hideHint() {
+        cards.indices.forEach { cards[$0].hint = .incomplete }
+    }
+
     enum CardPosition {
         case inDeck, onTable, removed
     }
@@ -120,6 +149,7 @@ struct SetGame<CardContent> {
         var position: CardPosition
         var isSelected: Bool = false
         var setState: SetState = .incomplete
+        var hint: SetState = .incomplete
         
         mutating func reset() {
             position = .inDeck

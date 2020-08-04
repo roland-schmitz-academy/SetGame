@@ -16,4 +16,6 @@ struct SetGameApp: App {
             SetGameView(game: viewModel)
         }
     }
+    
+    
 }

@@ -46,20 +46,31 @@ struct SetGameView: View {
                     Text("New Game").blueButton()
                 }
 
-                Button {
-                    withAnimation(Animation.easeInOut(duration: 1)) {
-                        game.deal()
-                    }
-                } label: {
-                    Text("Deal").blueButton()
-                }
+//                Button {
+//                    withAnimation(Animation.easeInOut(duration: 1)) {
+//                        game.deal()
+//                    }
+//                } label: {
+//                    Text("Deal").blueButton()
+//                }
+//
+//                Button {
+//                    withAnimation(Animation.easeInOut(duration: 1)) {
+//                        game.shuffle()
+//                    }
+//                } label: {
+//                    Text("Shuffle").blueButton()
+//                }
 
                 Button {
-                    withAnimation(Animation.easeInOut(duration: 1)) {
-                        game.shuffle()
+                    withAnimation(Animation.interpolatingSpring(stiffness: 10, damping: 10, initialVelocity: 5)) {
+                        game.showHint()
+                    }
+                    withAnimation(Animation.interpolatingSpring(stiffness: 10, damping: 10, initialVelocity: -5)) {
+                        game.hideHint()
                     }
                 } label: {
-                    Text("Shuffle").blueButton()
+                    Text("Show Hint").blueButton()
                 }
 
                 Button {
@@ -67,8 +78,8 @@ struct SetGameView: View {
                         game.showMore()
                     }
                 } label: {
-                    Text("Show More").blueButton()
-                }
+                    Text("3 More Cards").blueButton()
+                }.disabled(!game.hasDeckCards)
             }.padding(5)
         }
     }
