@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct BlueButton : ViewModifier {
-
+    @Environment(\.isEnabled) private var isEnabled: Bool
     func body(content: Content) -> some View {
         content
             .padding(.vertical, 5)
             .padding(.horizontal, 20)
-            .background(Color(.systemBlue))
+            .background(isEnabled ? Color(.systemBlue) : Color(.systemGray3))
             .foregroundColor(Color(.systemBackground))
             .cornerRadius(10)
             .padding(5)
