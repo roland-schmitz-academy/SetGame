@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F3333EAA24DB406A00E3DB74 /* Array+combinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3333EA924DB406A00E3DB74 /* Array+combinations.swift */; };
+		F3333EAB24DB406A00E3DB74 /* Array+combinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3333EA924DB406A00E3DB74 /* Array+combinations.swift */; };
 		F388B56924CA41CD0055865D /* SetGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388B56824CA41CD0055865D /* SetGameView.swift */; };
 		F388B56A24CA41CD0055865D /* SetGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388B56824CA41CD0055865D /* SetGameView.swift */; };
 		F388B56C24CA52000055865D /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388B56B24CA52000055865D /* Themes.swift */; };
@@ -36,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F3333EA924DB406A00E3DB74 /* Array+combinations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+combinations.swift"; sourceTree = "<group>"; };
 		F388B56824CA41CD0055865D /* SetGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameView.swift; sourceTree = "<group>"; };
 		F388B56B24CA52000055865D /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
 		F388B56E24CA542B0055865D /* Diamond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diamond.swift; sourceTree = "<group>"; };
@@ -100,6 +103,7 @@
 				F388B57424CB3A320055865D /* CardView.swift */,
 				F388B59E24CE15110055865D /* BlueButton.swift */,
 				F388B5A124CE1A870055865D /* Int+times.swift */,
+				F3333EA924DB406A00E3DB74 /* Array+combinations.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -230,6 +234,7 @@
 				F388B56C24CA52000055865D /* Themes.swift in Sources */,
 				F3F238C024C994CE00EACFA2 /* SetGame.swift in Sources */,
 				F388B56924CA41CD0055865D /* SetGameView.swift in Sources */,
+				F3333EAA24DB406A00E3DB74 /* Array+combinations.swift in Sources */,
 				F3F238C624CA185B00EACFA2 /* CardContentView.swift in Sources */,
 				F388B57524CB3A330055865D /* CardView.swift in Sources */,
 				F388B56F24CA542B0055865D /* Diamond.swift in Sources */,
@@ -249,6 +254,7 @@
 				F388B56D24CA52000055865D /* Themes.swift in Sources */,
 				F3F238C124C994CE00EACFA2 /* SetGame.swift in Sources */,
 				F388B56A24CA41CD0055865D /* SetGameView.swift in Sources */,
+				F3333EAB24DB406A00E3DB74 /* Array+combinations.swift in Sources */,
 				F3F238C724CA185B00EACFA2 /* CardContentView.swift in Sources */,
 				F388B57624CB3A330055865D /* CardView.swift in Sources */,
 				F388B57024CA542B0055865D /* Diamond.swift in Sources */,

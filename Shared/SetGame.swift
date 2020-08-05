@@ -56,7 +56,7 @@ struct SetGame<CardContent> {
             }
     }
     
-    mutating func unselectNonMatchingCards() {
+    mutating func deselectNonMatchingCards() {
         cards
             .indices
             .filter { cards[$0].isSelected && cards[$0].setState == .nonMatching }
@@ -68,7 +68,7 @@ struct SetGame<CardContent> {
     
     mutating func choose(card: Card) {
         replaceSelectedMatchingCards()
-        unselectNonMatchingCards()
+        deselectNonMatchingCards()
         if let chosenIndex = cards.firstIndex(where: { $0.id == card.id}),
            cards[chosenIndex].position == .onTable {
             cards[chosenIndex].isSelected.toggle()
@@ -121,10 +121,26 @@ struct SetGame<CardContent> {
         }
     }
 
+    mutating func findAllMatchingSets() -> [[Card]] {
+        openCards.filter {$0.setState != .matching}.combinations(ofLength: 3).filter { combination in
+            calculateSetState(for: combination) == .matching
+        }
+    }
+    
     mutating func showHint() {
-        // todo find hint cards matching current selection or hint a non matchable card in selection
-        cards[0].hint = .matching
-        cards[1].hint = .nonMatching
+        let allMatchingSets = findAllMatchingSets()
+        // if selection is empty or already matched or unmatched then use all sets, else use only sets which contain the selection
+        let relevantSets = selectedCards.filter { $0.setState == .incomplete }.isEmpty ?
+            allMatchingSets :
+            allMatchingSets.filter { set in selectedCards.allSatisfy { card in set.contains { setCard in card.id == setCard.id }}}
+        if let randomMatchingSet = relevantSets.randomElement(),
+           let randomMatchingCard = randomMatchingSet.filter({!$0.isSelected}).randomElement(),
+           let matchingIndex = cards.firstIndex(where: { $0.id==randomMatchingCard.id }) {
+            cards[matchingIndex].hint = .matching
+        } else {
+            cards.indices.forEach { if !cards[$0].isSelected { cards[$0].hint = .nonMatching } }
+        }
+        
     }
     
     mutating func hideHint() {
