@@ -83,6 +83,8 @@ class SetGameViewModel : ObservableObject {
     }
     
     func newGame() {
+        let theme = themes.randomElement()!
+        self.theme = theme
         self.game = Self.createGame(for: theme)
     }
 }

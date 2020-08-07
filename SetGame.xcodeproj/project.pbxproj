@@ -23,6 +23,10 @@
 		F388B5A024CE15110055865D /* BlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388B59E24CE15110055865D /* BlueButton.swift */; };
 		F388B5A224CE1A870055865D /* Int+times.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388B5A124CE1A870055865D /* Int+times.swift */; };
 		F388B5A324CE1A870055865D /* Int+times.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388B5A124CE1A870055865D /* Int+times.swift */; };
+		F3B3760A24DD56CC0003FD2B /* FixedAspectRatioShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B3760924DD56CC0003FD2B /* FixedAspectRatioShape.swift */; };
+		F3B3760B24DD56CC0003FD2B /* FixedAspectRatioShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B3760924DD56CC0003FD2B /* FixedAspectRatioShape.swift */; };
+		F3B3760D24DD715B0003FD2B /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B3760C24DD715B0003FD2B /* Pie.swift */; };
+		F3B3760E24DD715B0003FD2B /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B3760C24DD715B0003FD2B /* Pie.swift */; };
 		F3F238B124C79E0400EACFA2 /* SetGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F2389E24C79E0300EACFA2 /* SetGameApp.swift */; };
 		F3F238B224C79E0400EACFA2 /* SetGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F2389E24C79E0300EACFA2 /* SetGameApp.swift */; };
 		F3F238B524C79E0400EACFA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3F238A024C79E0400EACFA2 /* Assets.xcassets */; };
@@ -46,6 +50,8 @@
 		F388B57424CB3A320055865D /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		F388B59E24CE15110055865D /* BlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueButton.swift; sourceTree = "<group>"; };
 		F388B5A124CE1A870055865D /* Int+times.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+times.swift"; sourceTree = "<group>"; };
+		F3B3760924DD56CC0003FD2B /* FixedAspectRatioShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedAspectRatioShape.swift; sourceTree = "<group>"; };
+		F3B3760C24DD715B0003FD2B /* Pie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 		F3F2389E24C79E0300EACFA2 /* SetGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameApp.swift; sourceTree = "<group>"; };
 		F3F238A024C79E0400EACFA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3F238A524C79E0400EACFA2 /* SetGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SetGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +96,7 @@
 		F3F2389D24C79E0300EACFA2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				F3B3760C24DD715B0003FD2B /* Pie.swift */,
 				F3F2389E24C79E0300EACFA2 /* SetGameApp.swift */,
 				F3F238A024C79E0400EACFA2 /* Assets.xcassets */,
 				F3F238BF24C994CE00EACFA2 /* SetGame.swift */,
@@ -104,6 +111,7 @@
 				F388B59E24CE15110055865D /* BlueButton.swift */,
 				F388B5A124CE1A870055865D /* Int+times.swift */,
 				F3333EA924DB406A00E3DB74 /* Array+combinations.swift */,
+				F3B3760924DD56CC0003FD2B /* FixedAspectRatioShape.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -231,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3B3760D24DD715B0003FD2B /* Pie.swift in Sources */,
 				F388B56C24CA52000055865D /* Themes.swift in Sources */,
 				F3F238C024C994CE00EACFA2 /* SetGame.swift in Sources */,
 				F388B56924CA41CD0055865D /* SetGameView.swift in Sources */,
@@ -239,6 +248,7 @@
 				F388B57524CB3A330055865D /* CardView.swift in Sources */,
 				F388B56F24CA542B0055865D /* Diamond.swift in Sources */,
 				F3F238B124C79E0400EACFA2 /* SetGameApp.swift in Sources */,
+				F3B3760A24DD56CC0003FD2B /* FixedAspectRatioShape.swift in Sources */,
 				F3F238C924CA2B6D00EACFA2 /* AnyShape.swift in Sources */,
 				F388B59F24CE15110055865D /* BlueButton.swift in Sources */,
 				F3F238C324C9C0E500EACFA2 /* SetGameViewModel.swift in Sources */,
@@ -251,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3B3760E24DD715B0003FD2B /* Pie.swift in Sources */,
 				F388B56D24CA52000055865D /* Themes.swift in Sources */,
 				F3F238C124C994CE00EACFA2 /* SetGame.swift in Sources */,
 				F388B56A24CA41CD0055865D /* SetGameView.swift in Sources */,
@@ -259,6 +270,7 @@
 				F388B57624CB3A330055865D /* CardView.swift in Sources */,
 				F388B57024CA542B0055865D /* Diamond.swift in Sources */,
 				F3F238B224C79E0400EACFA2 /* SetGameApp.swift in Sources */,
+				F3B3760B24DD56CC0003FD2B /* FixedAspectRatioShape.swift in Sources */,
 				F3F238CA24CA2B6D00EACFA2 /* AnyShape.swift in Sources */,
 				F388B5A024CE15110055865D /* BlueButton.swift in Sources */,
 				F3F238C424C9C0E500EACFA2 /* SetGameViewModel.swift in Sources */,

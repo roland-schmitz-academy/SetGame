@@ -7,11 +7,13 @@
 
 import Foundation
 
+fileprivate var cardId = 0
+
 struct SetGame<CardContent> {
     private(set) var cards: [Card] = []
 
+    
     init(countRange: ClosedRange<Int>, colorIndices: Range<Int>, shapeIndices: Range<Int>, shadingIndices: Range<Int>, contentFactory: (_ symbolCount: Int, _ symbolColorIndex: Int, _ symbolShapeIndex: Int, _ symbolShadingIndex: Int) -> CardContent) {
-        var cardId: Int = 0
         for count in countRange {
             for colorIndex in colorIndices {
                 for shapeIndex in shapeIndices {

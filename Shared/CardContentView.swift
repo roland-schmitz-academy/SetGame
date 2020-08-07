@@ -25,7 +25,10 @@ struct CardContentView: View {
             ForEach(0..<count) { _ in
                 ZStack {
                     shape.fill(color).aspectRatio(2.5, contentMode: .fit).opacity(shading)
-                    shape.stroke(color, lineWidth: size.width / 20).aspectRatio(2.5, contentMode: .fit)
+                    //shape.stroke(color, lineWidth: size.width / 20).aspectRatio(2.5, contentMode: .fit)
+                    shape
+                        .stroke(color, style: StrokeStyle(lineWidth: size.width / 20, lineCap: CGLineCap.round))
+                        .aspectRatio(2.5, contentMode: .fit)
                 }
             }
         }
